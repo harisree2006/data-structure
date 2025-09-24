@@ -1,0 +1,96 @@
+// Algorithm for linkedlist
+
+
+2. Insertion Operations
+
+
+Algorithm for insertFront(data):
+
+Create a new node.
+Set newNode->data to the given data.
+Set newNode->next to the current head.
+Update head to point to newNode.
+
+
+Algorithm for insertEnd(data):
+
+
+
+Create a new node and set its data and next to NULL.
+If the list is empty (head == NULL), set head = newNode.
+Else, create a temporary pointer, temp, and set it to head.
+Traverse the list by moving temp to temp->next until temp->next is NULL.
+Set temp->next to newNode.
+
+
+
+Algorithm for insertAfter(key, data):
+
+
+
+Create a new node and set its data to the given data.
+Create a temporary pointer, temp, and set it to head.
+Traverse the list to find the node with data equal to key.
+If temp becomes NULL (key not found), print an error message.
+Else (key is found), set newNode->next = temp->next.
+Set temp->next = newNode.
+
+
+3. Deletion Operations
+
+
+Algorithm for deleteFront():
+
+If the list is empty (head == NULL), print a message.
+Else, create a temporary pointer, temp, and set it to head.
+Update head to head->next.
+Deallocate the memory of temp (free temp).
+
+
+
+Algorithm for deleteEnd():
+
+
+If the list is empty, print an error message.
+If there is only one node (head->next == NULL), free head and set head to NULL.
+Else, create two pointers, temp and prev. Set temp to head.
+Traverse the list by moving temp to temp->next until temp->next->next is NULL. prev will be the second-to-last node.
+Set prev->next = NULL.
+Free the last node (temp->next).
+
+
+
+Algorithm for deleteNode(key):
+
+
+
+Create two pointers, temp and prev. Set temp to head and prev to NULL.
+If the head node is the one to be deleted (temp->data == key), update head to temp->next and free temp.
+Else, traverse the list to find the node with the key. Store the previous node in prev.
+If the node is not found (temp == NULL), print an error message.
+Else, set prev->next = temp->next.
+Free the memory of temp.
+
+
+
+4. Other Operations
+
+
+Algorithm for search(key):
+
+
+
+Create a temporary pointer, temp, and set it to head.
+Traverse the list. In each step, check if temp->data is equal to key.
+If a match is found, print a success message and stop.
+If the end of the list is reached without a match, print a "not found" message.
+
+
+Algorithm for display():
+
+
+
+If the list is empty, print a "list is empty" message.
+Else, create a temporary pointer, temp, and set it to head.
+Traverse the list, printing the data of each node.
+Stop when temp becomes NULL.
