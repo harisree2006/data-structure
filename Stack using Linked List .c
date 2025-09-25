@@ -1,21 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Node structure for the linked list
 struct Node {
     int data;
     struct Node* next;
 };
 
-// Global top pointer of the stack
 struct Node* top = NULL;
 
-// Function to check if the stack is empty
 int isEmpty() {
     return (top == NULL);
 }
 
-// Function to push an element onto the stack
 void push(int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     if (newNode == NULL) {
@@ -28,7 +24,6 @@ void push(int value) {
     printf("Pushed %d onto the stack.\n", value);
 }
 
-// Function to pop an element from the stack
 void pop() {
     if (isEmpty()) {
         printf("Stack Underflow! Cannot pop.\n");
@@ -40,7 +35,7 @@ void pop() {
     free(temp);
 }
 
-// Function to get the top element without removing it
+
 void peek() {
     if (isEmpty()) {
         printf("Stack is empty.\n");
@@ -49,7 +44,6 @@ void peek() {
     printf("Top element is: %d\n", top->data);
 }
 
-// Function to display the stack
 void displayStack() {
     if (isEmpty()) {
         printf("Stack is empty.\n");
@@ -68,7 +62,7 @@ int main() {
     int choice, value;
 
     do {
-        printf("\n--- Stack using Linked List ---\n");
+        printf("\n Stack using Linked List\n");
         printf("1. Push\n");
         printf("2. Pop\n");
         printf("3. Peek\n");
