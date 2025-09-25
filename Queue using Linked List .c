@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Node structure for the linked list
 struct Node {
     int data;
     struct Node* next;
 };
 
-// Global front and rear pointers
+
 struct Node* front = NULL;
 struct Node* rear = NULL;
 
@@ -16,7 +15,7 @@ int isEmpty() {
     return (front == NULL);
 }
 
-// Function to enqueue an element
+
 void enqueue(int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     if (newNode == NULL) {
@@ -35,7 +34,6 @@ void enqueue(int value) {
     printf("Enqueued %d into the queue.\n", value);
 }
 
-// Function to dequeue an element
 void dequeue() {
     if (isEmpty()) {
         printf("Queue Underflow! Cannot dequeue.\n");
@@ -50,7 +48,6 @@ void dequeue() {
     free(temp);
 }
 
-// Function to get the front element
 void peek() {
     if (isEmpty()) {
         printf("Queue is empty.\n");
@@ -59,7 +56,6 @@ void peek() {
     printf("Front element is: %d\n", front->data);
 }
 
-// Function to display the queue
 void displayQueue() {
     if (isEmpty()) {
         printf("Queue is empty.\n");
@@ -78,7 +74,7 @@ int main() {
     int choice, value;
 
     do {
-        printf("\n--- Queue using Linked List ---\n");
+        printf("\n Queue using Linked List \n");
         printf("1. Enqueue\n");
         printf("2. Dequeue\n");
         printf("3. Peek\n");
