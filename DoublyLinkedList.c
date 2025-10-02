@@ -1,18 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Node structure for Doubly Linked List
 struct Node {
     int data;
     struct Node* prev;
     struct Node* next;
 };
 
-// Global head and tail pointers
 struct Node* head = NULL;
 struct Node* tail = NULL;
 
-// Function to create a new node
 struct Node* createNode(int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     if (newNode == NULL) {
@@ -25,7 +22,6 @@ struct Node* createNode(int value) {
     return newNode;
 }
 
-// Function to insert a node at the front
 void insertAtFront(int value) {
     struct Node* newNode = createNode(value);
     if (head == NULL) {
@@ -38,7 +34,6 @@ void insertAtFront(int value) {
     printf("Node inserted at the front.\n");
 }
 
-// Function to insert a node at the end
 void insertAtEnd(int value) {
     struct Node* newNode = createNode(value);
     if (tail == NULL) {
@@ -51,7 +46,6 @@ void insertAtEnd(int value) {
     printf("Node inserted at the end.\n");
 }
 
-// Function to insert a node after a specific node
 void insertAfterNode(int afterValue, int value) {
     struct Node* temp = head;
     while (temp != NULL && temp->data != afterValue) {
@@ -76,7 +70,6 @@ void insertAfterNode(int afterValue, int value) {
     printf("Node inserted after %d.\n", afterValue);
 }
 
-// Function to delete the first node
 void deleteFirst() {
     if (head == NULL) {
         printf("List is empty. Cannot delete.\n");
@@ -87,13 +80,12 @@ void deleteFirst() {
     if (head != NULL) {
         head->prev = NULL;
     } else {
-        tail = NULL; // The list is now empty
+        tail = NULL; 
     }
     free(temp);
     printf("First node deleted.\n");
 }
 
-// Function to delete the last node
 void deleteLast() {
     if (tail == NULL) {
         printf("List is empty. Cannot delete.\n");
@@ -104,13 +96,12 @@ void deleteLast() {
     if (tail != NULL) {
         tail->next = NULL;
     } else {
-        head = NULL; // The list is now empty
+        head = NULL; 
     }
     free(temp);
     printf("Last node deleted.\n");
 }
 
-// Function to delete a specific node
 void deleteNode(int value) {
     if (head == NULL) {
         printf("List is empty. Cannot delete.\n");
@@ -142,7 +133,6 @@ void deleteNode(int value) {
     printf("Node with data %d deleted.\n", value);
 }
 
-// Function to search for a node
 void searchNode(int value) {
     struct Node* temp = head;
     int position = 1;
@@ -158,7 +148,6 @@ void searchNode(int value) {
     }
 }
 
-// Function to display the list
 void displayList() {
     if (head == NULL) {
         printf("List is empty.\n");
@@ -177,7 +166,7 @@ int main() {
     int choice, value, afterValue;
 
     do {
-        printf("\n--- Doubly Linked List Operations ---\n");
+        printf("\n    Doubly Linked List Operations    \n");
         printf("1. Insert at Front\n");
         printf("2. Insert at End\n");
         printf("3. Insert After a Node\n");
