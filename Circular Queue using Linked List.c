@@ -37,8 +37,8 @@ void dequeue() {
         return;
     }
 
-    struct Node* temp = rear->next; // Front of the queue
-    if (rear->next == rear) { // Only one element in the queue
+    struct Node* temp = rear->next; 
+    if (rear->next == rear) { 
         rear = NULL;
     } else {
         rear->next = temp->next;
