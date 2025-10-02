@@ -10,7 +10,6 @@ struct Node {
 struct Node* front = NULL;
 struct Node* rear = NULL;
 
-// Function to check if the queue is empty
 int isEmpty() {
     return (front == NULL);
 }
@@ -25,7 +24,7 @@ void enqueue(int value) {
     newNode->data = value;
     newNode->next = NULL;
 
-    if (rear == NULL) { // Queue is empty
+    if (rear == NULL) { 
         front = rear = newNode;
     } else {
         rear->next = newNode;
@@ -41,7 +40,7 @@ void dequeue() {
     }
     struct Node* temp = front;
     front = front->next;
-    if (front == NULL) { // Last element was dequeued
+    if (front == NULL) {
         rear = NULL;
     }
     printf("Dequeued %d from the queue.\n", temp->data);
