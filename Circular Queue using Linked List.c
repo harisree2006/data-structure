@@ -1,21 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Node structure for the circular linked list
 struct Node {
     int data;
     struct Node* next;
 };
 
-// Global rear pointer for the circular queue
 struct Node* rear = NULL;
 
-// Function to check if the queue is empty
 int isEmpty() {
     return (rear == NULL);
 }
 
-// Function to enqueue an element
 void enqueue(int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     if (newNode == NULL) {
@@ -35,7 +31,6 @@ void enqueue(int value) {
     printf("Enqueued %d into the circular queue.\n", value);
 }
 
-// Function to dequeue an element
 void dequeue() {
     if (isEmpty()) {
         printf("Queue Underflow! Cannot dequeue.\n");
@@ -52,7 +47,6 @@ void dequeue() {
     free(temp);
 }
 
-// Function to get the front element
 void peek() {
     if (isEmpty()) {
         printf("Queue is empty.\n");
@@ -61,7 +55,6 @@ void peek() {
     printf("Front element is: %d\n", rear->next->data);
 }
 
-// Function to display the circular queue
 void displayQueue() {
     if (isEmpty()) {
         printf("Circular Queue is empty.\n");
@@ -80,7 +73,7 @@ int main() {
     int choice, value;
 
     do {
-        printf("\n--- Circular Queue using Linked List ---\n");
+        printf("\n    Circular Queue using Linked List   \n");
         printf("1. Enqueue\n");
         printf("2. Dequeue\n");
         printf("3. Peek\n");
