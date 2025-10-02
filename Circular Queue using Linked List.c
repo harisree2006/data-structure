@@ -20,7 +20,7 @@ void enqueue(int value) {
     }
     newNode->data = value;
 
-    if (rear == NULL) { // Queue is empty
+    if (rear == NULL) { 
         rear = newNode;
         rear->next = rear;
     } else {
